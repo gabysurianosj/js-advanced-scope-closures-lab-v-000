@@ -10,7 +10,18 @@ function produceDrivingRange(blockRange) {
 }
 
 function produceTipCalculator(tip) {
-  return function(fare)
+  return function(fare) {
   return fare * tip;
+  }
 }
+
+function createDriver() {
+  let driverId = 0;
+
+  return class {
+    constructor (name) {
+      this.name = name;
+      this.id = ++driverId;
+    }
+  }
 }
